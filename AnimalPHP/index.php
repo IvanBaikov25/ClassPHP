@@ -1,24 +1,19 @@
 <?php
 
-require 'Dog.php';
-require 'Cat.php';
-require 'Zoo.php';
+require_once 'Dog.php';
+require_once 'Cat.php';
+require_once 'Zoo.php';
 
-// Создаем объекты классов Dog и Cat
-$dog1 = new Dog("Бобик", 3, "Собака", "Лабрадор");
-$cat1 = new Cat("Мурка", 2, "Кошка", "Черный");
+$dog1 = new Dog(name: "Бим", age: 3, breed: "Бульдог");
+$dog2 = new Dog(name: "Рекс", age: 5, breed: "Мопс");
+$cat1 = new Cat(name: "Ириска", age: 2, color: "Черный");
+$cat2 = new Cat(name: "Апельсин", age: 4, color: "Рыжий");
 
-// Создаем объект класса Zoo
 $zoo = new Zoo();
+$zoo->addAnimal(animal: $dog1);
+$zoo->addAnimal(animal: $dog2);
+$zoo->addAnimal(animal: $cat1);
+$zoo->addAnimal(animal: $cat2);
 
-// Добавляем животных в зоопарк
-$zoo->addAnimal($dog1);
-$zoo->addAnimal($cat1);
-
-// Выводим информацию о всех животных
-echo "Список животных в зоопарке:" . PHP_EOL;
 $zoo->listAnimals();
-
-// Вызываем звуки животных
-echo "Звуки животных:" . PHP_EOL;
 $zoo->animalSounds();
