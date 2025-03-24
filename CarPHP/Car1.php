@@ -1,7 +1,11 @@
 <?php
-require 'Car.php';
-$myCar = new Car("BMW", "X5", 2020, 50000);
-echo $myCar->getInfo() . PHP_EOL;
-$myCar->drive(150);
-echo "Обновленный пробег: " . $myCar->getMileage() . " км" . PHP_EOL;
-echo $myCar->getInfo() . PHP_EOL;
+
+require_once 'Car.php';
+
+$myCar = new Car("Lada", "Priora", 2019, 35000);
+
+echo $myCar->getInfo() . "\n";
+
+$myCar->drive(1500);
+echo "После поездки: " . $myCar->getInfo() . "\n";
+echo "Возвращенный пробег: " . $myCar->getMileage() . " км\n";
